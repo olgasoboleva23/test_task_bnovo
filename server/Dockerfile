@@ -8,5 +8,4 @@ COPY . .
 RUN npm cache clean --force
 RUN npm install
 
-# CMD ["npm", "run", "start"]
 CMD [ "node", "server.js" ]

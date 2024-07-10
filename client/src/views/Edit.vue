@@ -17,7 +17,7 @@
     </div>
     <div class="note__edit" :class="{'note__edit-disabled': !editMode}">
       <div>
-        <input id="title" v-model="note.title"></input>
+        <input @blur="note.title = $event.target.value" :value="note.title" />
       </div>
       <div>
         <div class="note__top-actions">
@@ -176,8 +176,11 @@ button:not(.text) {
 .note {
   &__top-actions {
     display: flex;
-    .router-link-active, span {
+    .router-link-active {
       margin-right: auto;
+    }
+    span {
+      margin-left: auto;
     }
   }
   &__bottom-actions {
