@@ -139,6 +139,9 @@ export default {
     async saveNote() {
       await this.$store.dispatch('updateNote', this.note);
       this.editMode = false;
+
+      this.undone = [];
+      this.done = [];
     },
     async deleteAndReturn() {
       const isConfirmed = await this.deleteNote(this.note.id);

@@ -18,7 +18,6 @@ const store = new Vuex.Store({
     async getNotes({commit}) {
       let res = await NotesAPI.get();
       let notes = res?.data?.data;
-      console.log({notes})
       commit('SET_NOTES', notes);
     },
     async getCurrentNote({commit}, id) {
